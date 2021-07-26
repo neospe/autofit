@@ -1,0 +1,695 @@
+{
+    "9dda39bc-cbe6-4bb1-a6bb-3e4ae1b39eaa": {
+        "date": "2021-03-19 11:03:19",
+        "dataset_name": "hate-speech-and-offensive-language",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-and-offensive-language/data/labeled_data.csv"
+        ],
+        "data_loader": "hate1",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/9dda39bc-cbe6-4bb1-a6bb-3e4ae1b39eaa.txt",
+        "language_code": "en"
+    },
+    "27c7e453-d5ac-431f-b50e-a7a3d52f4081": {
+        "date": "2021-03-19 11:10:21",
+        "dataset_name": "hate-speech-and-offensive-language",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-and-offensive-language/data/labeled_data.csv"
+        ],
+        "data_loader": "hate1",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/27c7e453-d5ac-431f-b50e-a7a3d52f4081.txt",
+        "language_code": "en"
+    },
+    "1403a705-e9b3-48d7-ba8b-ebba6b48fd1a": {
+        "date": "2021-03-19 11:13:35",
+        "dataset_name": "hate-speech-and-offensive-language",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-and-offensive-language/data/labeled_data.csv"
+        ],
+        "data_loader": "hate1",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/1403a705-e9b3-48d7-ba8b-ebba6b48fd1a.txt",
+        "language_code": "en"
+    },
+    "5b85d409-3571-401d-8e38-a1c8a8dbb7e4": {
+        "date": "2021-03-19 11:13:58",
+        "dataset_name": "hatespeech",
+        "input_path": [
+            "~/Daten/aggression/AutomaticDetectionofHateSpeech/hatespeech.csv",
+            "~/Daten/aggression/hatespeech/NAACL_SRW_2016.csv"
+        ],
+        "data_loader": "hate2",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/5b85d409-3571-401d-8e38-a1c8a8dbb7e4.txt",
+        "language_code": "en"
+    },
+    "4e68c1b3-993d-4951-ac12-54df02b7a713": {
+        "date": "2021-03-19 11:17:01",
+        "dataset_name": "hatespeech",
+        "input_path": [
+            "~/Daten/aggression/AutomaticDetectionofHateSpeech/hatespeech.csv",
+            "~/Daten/aggression/hatespeech/NAACL_SRW_2016.csv"
+        ],
+        "data_loader": "hate2",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/4e68c1b3-993d-4951-ac12-54df02b7a713.txt",
+        "language_code": "en"
+    },
+    "410f71b4-815e-48d1-ad37-e2f1e4c71b2e": {
+        "date": "2021-03-19 11:24:54",
+        "dataset_name": "hatespeech",
+        "input_path": [
+            "~/Daten/aggression/AutomaticDetectionofHateSpeech/hatespeech.csv",
+            "~/Daten/aggression/hatespeech/NAACL_SRW_2016.csv"
+        ],
+        "data_loader": "hate2",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/410f71b4-815e-48d1-ad37-e2f1e4c71b2e.txt",
+        "language_code": "en"
+    },
+    "d8aec89d-4780-41b3-a41d-5c953009ee6c": {
+        "date": "2021-03-19 11:25:22",
+        "dataset_name": "hate-speech-dataset",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-dataset/annotations_metadata.csv",
+            "~/Daten/aggression/hate-speech-dataset/all_files"
+        ],
+        "data_loader": "hate3",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/d8aec89d-4780-41b3-a41d-5c953009ee6c.txt",
+        "language_code": "en"
+    },
+    "b0898240-84ad-42ce-b9d0-db82a4d34375": {
+        "date": "2021-03-19 11:28:04",
+        "dataset_name": "hate-speech-dataset",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-dataset/annotations_metadata.csv",
+            "~/Daten/aggression/hate-speech-dataset/all_files"
+        ],
+        "data_loader": "hate3",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/b0898240-84ad-42ce-b9d0-db82a4d34375.txt",
+        "language_code": "en"
+    },
+    "45084cb0-6cf4-4493-b4f6-c3e55ce21c90": {
+        "date": "2021-03-19 11:34:36",
+        "dataset_name": "hate-speech-dataset",
+        "input_path": [
+            "~/Daten/aggression/hate-speech-dataset/annotations_metadata.csv",
+            "~/Daten/aggression/hate-speech-dataset/all_files"
+        ],
+        "data_loader": "hate3",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/45084cb0-6cf4-4493-b4f6-c3e55ce21c90.txt",
+        "language_code": "en"
+    },
+    "4d5a4bd5-9891-42f8-b26d-c0c9e141a704": {
+        "date": "2021-03-19 11:36:52",
+        "dataset_name": "founta-corpus",
+        "input_path": [
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter-tweets.csv",
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter.tsv"
+        ],
+        "data_loader": "hate4",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/4d5a4bd5-9891-42f8-b26d-c0c9e141a704.txt",
+        "language_code": "en"
+    },
+    "aae4320b-ccc4-4316-9b4e-f861a80cc8ec": {
+        "date": "2021-03-19 11:44:11",
+        "dataset_name": "founta-corpus",
+        "input_path": [
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter-tweets.csv",
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter.tsv"
+        ],
+        "data_loader": "hate4",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/aae4320b-ccc4-4316-9b4e-f861a80cc8ec.txt",
+        "language_code": "en"
+    },
+    "dd60b573-c794-464f-9d6f-83fb084038ab": {
+        "date": "2021-03-19 12:21:32",
+        "dataset_name": "founta-corpus",
+        "input_path": [
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter-tweets.csv",
+            "~/Daten/aggression/founta-corpus/hatespeechtwitter.tsv"
+        ],
+        "data_loader": "hate4",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/dd60b573-c794-464f-9d6f-83fb084038ab.txt",
+        "language_code": "en"
+    },
+    "7ffc408d-068d-46ee-bc97-22781b85834a": {
+        "date": "2021-03-19 12:21:53",
+        "dataset_name": "OffensEval-2019",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2019/offenseval-training-v1.tsv"
+        ],
+        "data_loader": "offense19",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/7ffc408d-068d-46ee-bc97-22781b85834a.txt",
+        "language_code": "en"
+    },
+    "8c31ef2c-d7f9-4d50-920d-34658fe4becd": {
+        "date": "2021-03-19 12:22:58",
+        "dataset_name": "OffensEval-2019",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2019/offenseval-training-v1.tsv"
+        ],
+        "data_loader": "offense19",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/8c31ef2c-d7f9-4d50-920d-34658fe4becd.txt",
+        "language_code": "en"
+    },
+    "a69ddfbf-f941-4bb9-a5b9-b9705695df8c": {
+        "date": "2021-03-19 12:34:03",
+        "dataset_name": "OffensEval-2019",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2019/offenseval-training-v1.tsv"
+        ],
+        "data_loader": "offense19",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/a69ddfbf-f941-4bb9-a5b9-b9705695df8c.txt",
+        "language_code": "en"
+    },
+    "cf9efa1d-7751-4d98-932e-a7a8ef09222c": {
+        "date": "2021-03-19 12:34:14",
+        "dataset_name": "OffensEval-2020",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_tweets.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_labels.csv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_tweets_all.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_labels_all.csv"
+        ],
+        "data_loader": "offense20",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/cf9efa1d-7751-4d98-932e-a7a8ef09222c.txt",
+        "language_code": "en"
+    },
+    "d414777f-a3e6-4c59-8bb5-d55e90f1bfac": {
+        "date": "2021-03-19 12:34:37",
+        "dataset_name": "OffensEval-2020",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_tweets.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_labels.csv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_tweets_all.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_labels_all.csv"
+        ],
+        "data_loader": "offense20",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/d414777f-a3e6-4c59-8bb5-d55e90f1bfac.txt",
+        "language_code": "en"
+    },
+    "c77dbecc-5943-4abf-bf93-18b6083a6f60": {
+        "date": "2021-03-19 12:40:49",
+        "dataset_name": "OffensEval-2020",
+        "input_path": [
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_tweets.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/semeval_test/test_a_labels.csv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_tweets_all.tsv",
+            "~/Daten/aggression/OffensEval-2020/SOLID/extended_test/test_a_labels_all.csv"
+        ],
+        "data_loader": "offense20",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/c77dbecc-5943-4abf-bf93-18b6083a6f60.txt",
+        "language_code": "en"
+    },
+    "479d095b-2161-451d-b445-e51ca1a9d51a": {
+        "date": "2021-03-19 12:40:51",
+        "dataset_name": "OLID",
+        "input_path": [
+            "~/Daten/aggression/OLIDv1.0/testset-levela.tsv",
+            "~/Daten/aggression/OLIDv1.0/labels-levela.csv"
+        ],
+        "data_loader": "olid",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/479d095b-2161-451d-b445-e51ca1a9d51a.txt",
+        "language_code": "en"
+    },
+    "2845e98a-93f6-4eca-a515-11266430f561": {
+        "date": "2021-03-19 12:40:57",
+        "dataset_name": "OLID",
+        "input_path": [
+            "~/Daten/aggression/OLIDv1.0/testset-levela.tsv",
+            "~/Daten/aggression/OLIDv1.0/labels-levela.csv"
+        ],
+        "data_loader": "olid",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/2845e98a-93f6-4eca-a515-11266430f561.txt",
+        "language_code": "en"
+    },
+    "c3533f8c-0b7f-400a-b2a2-281c9db5665a": {
+        "date": "2021-03-19 12:41:59",
+        "dataset_name": "OLID",
+        "input_path": [
+            "~/Daten/aggression/OLIDv1.0/testset-levela.tsv",
+            "~/Daten/aggression/OLIDv1.0/labels-levela.csv"
+        ],
+        "data_loader": "olid",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/c3533f8c-0b7f-400a-b2a2-281c9db5665a.txt",
+        "language_code": "en"
+    },
+    "9677327a-9d18-4319-be05-0f70825db5aa": {
+        "date": "2021-03-19 12:42:42",
+        "dataset_name": "HateXplain",
+        "input_path": [
+            "~/Daten/aggression/HateXplain/HateXplain/Data/dataset.json"
+        ],
+        "data_loader": "hatexplain",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/9677327a-9d18-4319-be05-0f70825db5aa.txt",
+        "language_code": "en"
+    },
+    "33925c2a-753f-4168-8fce-a891a50e4e10": {
+        "date": "2021-03-19 12:45:41",
+        "dataset_name": "HateXplain",
+        "input_path": [
+            "~/Daten/aggression/HateXplain/HateXplain/Data/dataset.json"
+        ],
+        "data_loader": "hatexplain",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/33925c2a-753f-4168-8fce-a891a50e4e10.txt",
+        "language_code": "en"
+    },
+    "6f86fd52-3396-45be-a7a4-ef24f448ced1": {
+        "date": "2021-03-19 12:50:31",
+        "dataset_name": "HateXplain",
+        "input_path": [
+            "~/Daten/aggression/HateXplain/HateXplain/Data/dataset.json"
+        ],
+        "data_loader": "hatexplain",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/6f86fd52-3396-45be-a7a4-ef24f448ced1.txt",
+        "language_code": "en"
+    },
+    "6c231673-e724-4411-a546-111bf07c1df2": {
+        "date": "2021-03-19 12:53:51",
+        "dataset_name": "OffensEval-2020-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/SOLID-testdata-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/6c231673-e724-4411-a546-111bf07c1df2.txt",
+        "language_code": "en"
+    },
+    "6f783db7-b3c7-456e-8c4f-1f7123049655": {
+        "date": "2021-03-19 12:56:38",
+        "dataset_name": "OffensEval-2020-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/SOLID-testdata-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/6f783db7-b3c7-456e-8c4f-1f7123049655.txt",
+        "language_code": "en"
+    },
+    "97b8552b-4ab0-41c4-a261-8260c204a7fc": {
+        "date": "2021-03-19 12:56:49",
+        "dataset_name": "OffensEval-2019-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/OffensEval-2019-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/97b8552b-4ab0-41c4-a261-8260c204a7fc.txt",
+        "language_code": "en"
+    },
+    "25e5f733-82c2-48d7-ac03-2b184a195796": {
+        "date": "2021-03-19 12:59:22",
+        "dataset_name": "OffensEval-2019-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/OffensEval-2019-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/25e5f733-82c2-48d7-ac03-2b184a195796.txt",
+        "language_code": "en"
+    },
+    "9a163c25-7a73-4390-ac0b-5dbc121c3024": {
+        "date": "2021-03-19 12:59:31",
+        "dataset_name": "founta-corpus-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/founta-corpus-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/9a163c25-7a73-4390-ac0b-5dbc121c3024.txt",
+        "language_code": "en"
+    },
+    "65776091-b34b-451c-a2ce-79e7263712b3": {
+        "date": "2021-03-19 13:00:40",
+        "dataset_name": "founta-corpus-relabel",
+        "input_path": [
+            "~/Daten/aggression/re-labelings/founta-corpus-profanity-predicted.csv"
+        ],
+        "data_loader": "relabel",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/65776091-b34b-451c-a2ce-79e7263712b3.txt",
+        "language_code": "en"
+    },
+    "960934ad-7c87-44e2-89ff-3af8bf24310e": {
+        "date": "2021-03-19 13:00:41",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.training.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/960934ad-7c87-44e2-89ff-3af8bf24310e.txt",
+        "language_code": "de"
+    },
+    "50a01108-cb97-45e5-bfb6-01f99d0e78e6": {
+        "date": "2021-03-19 13:14:41",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.training.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/50a01108-cb97-45e5-bfb6-01f99d0e78e6.txt",
+        "language_code": "de"
+    },
+    "ad96596f-1d29-4136-8e2f-c91d9d4d69df": {
+        "date": "2021-03-19 13:16:49",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.training.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/ad96596f-1d29-4136-8e2f-c91d9d4d69df.txt",
+        "language_code": "de"
+    },
+    "ab8987ff-16c3-452f-8a6e-9397ae83b520": {
+        "date": "2021-03-19 13:16:49",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.test.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/ab8987ff-16c3-452f-8a6e-9397ae83b520.txt",
+        "language_code": "de"
+    },
+    "cdd25974-89ee-44da-aac2-07d5378c06d9": {
+        "date": "2021-03-19 13:24:45",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.test.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/cdd25974-89ee-44da-aac2-07d5378c06d9.txt",
+        "language_code": "de"
+    },
+    "bb49b006-53d9-43ab-8460-566af155ab0b": {
+        "date": "2021-03-19 13:26:44",
+        "dataset_name": "GermEval-2018-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2018-Data/germeval2018.test.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/bb49b006-53d9-43ab-8460-566af155ab0b.txt",
+        "language_code": "de"
+    },
+    "aa7def31-571d-409c-a220-a089670301b9": {
+        "date": "2021-03-19 13:26:45",
+        "dataset_name": "germeval2018-upinf",
+        "input_path": [
+            "~/Daten/aggression/germeval2018-upinf/labeled_tweets.tsv"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/aa7def31-571d-409c-a220-a089670301b9.txt",
+        "language_code": "de"
+    },
+    "5c800b2d-36d6-4a40-854f-85a1e5af20da": {
+        "date": "2021-03-19 13:36:17",
+        "dataset_name": "germeval2018-upinf",
+        "input_path": [
+            "~/Daten/aggression/germeval2018-upinf/labeled_tweets.tsv"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/5c800b2d-36d6-4a40-854f-85a1e5af20da.txt",
+        "language_code": "de"
+    },
+    "0e713a8a-7807-4db0-8066-ea8ca0d96e96": {
+        "date": "2021-03-19 13:40:55",
+        "dataset_name": "germeval2018-upinf",
+        "input_path": [
+            "~/Daten/aggression/germeval2018-upinf/labeled_tweets.tsv"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/0e713a8a-7807-4db0-8066-ea8ca0d96e96.txt",
+        "language_code": "de"
+    },
+    "b3b5713e-4d90-4b1c-a84f-9d6e539656f6": {
+        "date": "2021-03-19 13:40:56",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019_training_subtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/b3b5713e-4d90-4b1c-a84f-9d6e539656f6.txt",
+        "language_code": "de"
+    },
+    "bb490bf3-1876-4085-95d5-110701a70cf5": {
+        "date": "2021-03-19 13:53:59",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019_training_subtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/bb490bf3-1876-4085-95d5-110701a70cf5.txt",
+        "language_code": "de"
+    },
+    "8d174a18-7078-4d07-89ce-fd039eb93bf3": {
+        "date": "2021-03-19 13:57:34",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019_training_subtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/8d174a18-7078-4d07-89ce-fd039eb93bf3.txt",
+        "language_code": "de"
+    },
+    "7d8b5313-8177-4760-8408-9d0f3c888c27": {
+        "date": "2021-03-19 13:57:34",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019.training_subtask3.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/7d8b5313-8177-4760-8408-9d0f3c888c27.txt",
+        "language_code": "de"
+    },
+    "e481d539-04ae-473b-ac0d-25aa01584ea2": {
+        "date": "2021-03-19 14:03:30",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019.training_subtask3.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/e481d539-04ae-473b-ac0d-25aa01584ea2.txt",
+        "language_code": "de"
+    },
+    "8c2ce5cb-0608-49e6-9af0-fb58f279017b": {
+        "date": "2021-03-19 14:03:31",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019GoldLabelsSubtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/8c2ce5cb-0608-49e6-9af0-fb58f279017b.txt",
+        "language_code": "de"
+    },
+    "cb678772-b6e8-4836-867c-b626de01b642": {
+        "date": "2021-03-19 14:13:31",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019GoldLabelsSubtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/cb678772-b6e8-4836-867c-b626de01b642.txt",
+        "language_code": "de"
+    },
+    "e6b01c20-4857-41ba-8e4f-1e9b7f09623f": {
+        "date": "2021-03-19 14:15:28",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019GoldLabelsSubtask12.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/e6b01c20-4857-41ba-8e4f-1e9b7f09623f.txt",
+        "language_code": "de"
+    },
+    "4e04d7ed-ee0b-45a0-a520-6be85c6c5089": {
+        "date": "2021-03-19 14:15:28",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019GoldLabelsSubtask3.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/4e04d7ed-ee0b-45a0-a520-6be85c6c5089.txt",
+        "language_code": "de"
+    },
+    "cd746da1-757f-4ce8-98e7-e9decace9f87": {
+        "date": "2021-03-19 14:18:18",
+        "dataset_name": "GermEval-2019-Data",
+        "input_path": [
+            "~/Daten/aggression/GermEval-2019-Data/germeval2019GoldLabelsSubtask3.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/cd746da1-757f-4ce8-98e7-e9decace9f87.txt",
+        "language_code": "de"
+    },
+    "00efeaa4-20bd-4312-a1a3-210bf2906b86": {
+        "date": "2021-03-19 14:18:18",
+        "dataset_name": "afd-fpoe-corpus",
+        "input_path": [
+            "~/Daten/aggression/afd-fpoe-corpus/afd-fpoe-corpus.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/00efeaa4-20bd-4312-a1a3-210bf2906b86.txt",
+        "language_code": "de"
+    },
+    "9b060cfd-60f0-4ebd-8e8b-5acd012f3b8e": {
+        "date": "2021-03-19 14:19:28",
+        "dataset_name": "afd-fpoe-corpus",
+        "input_path": [
+            "~/Daten/aggression/afd-fpoe-corpus/afd-fpoe-corpus.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/9b060cfd-60f0-4ebd-8e8b-5acd012f3b8e.txt",
+        "language_code": "de"
+    },
+    "bb265ee8-ca61-4d43-bf5a-1e2f7c666fdf": {
+        "date": "2021-03-19 14:21:39",
+        "dataset_name": "afd-fpoe-corpus",
+        "input_path": [
+            "~/Daten/aggression/afd-fpoe-corpus/afd-fpoe-corpus.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "debiasing",
+        "sample_source": "twint",
+        "output_path": "~/Daten/aggression/augmentations/bb265ee8-ca61-4d43-bf5a-1e2f7c666fdf.txt",
+        "language_code": "de"
+    },
+    "947bc73c-96ee-49d2-bbda-368dc2c3d0ff": {
+        "date": "2021-03-27 14:00:19",
+        "dataset_name": "smsspamcollection",
+        "input_path": [
+            "~/Daten/spam/smsspamcollection/SMSSpamCollection.txt"
+        ],
+        "data_loader": "spam1",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/spam/augmentations/947bc73c-96ee-49d2-bbda-368dc2c3d0ff.txt",
+        "language_code": "en"
+    },
+    "fee1c65c-8c6b-4e47-9d92-3caefc6cf3a0": {
+        "date": "2021-03-27 14:01:26",
+        "dataset_name": "smsspamcollection",
+        "input_path": [
+            "~/Daten/spam/smsspamcollection/SMSSpamCollection.txt"
+        ],
+        "data_loader": "spam1",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/spam/augmentations/fee1c65c-8c6b-4e47-9d92-3caefc6cf3a0.txt",
+        "language_code": "en"
+    },
+    "e5bc72ff-d955-4d86-9ea0-9b067b72a8cc": {
+        "date": "2021-03-27 17:23:53",
+        "dataset_name": "german-spam",
+        "input_path": [
+            "~/Daten/spam/german-spam/german-spam.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "perturbations",
+        "sample_source": "twint",
+        "output_path": "~/Daten/spam/augmentations/e5bc72ff-d955-4d86-9ea0-9b067b72a8cc.txt",
+        "language_code": "de"
+    },
+    "d119c89e-6a93-430d-b3d9-c17159807ef7": {
+        "date": "2021-03-27 17:40:42",
+        "dataset_name": "german-spam",
+        "input_path": [
+            "~/Daten/spam/german-spam/german-spam.txt"
+        ],
+        "data_loader": "germeval",
+        "augmentations": "synonyms",
+        "sample_source": "twint",
+        "output_path": "~/Daten/spam/augmentations/d119c89e-6a93-430d-b3d9-c17159807ef7.txt",
+        "language_code": "de"
+    }
+}
