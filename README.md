@@ -7,29 +7,33 @@ Automated end-to-end data preprocessing, model training, and evaluation pipeline
 
 `autofit` is written in `tensorflow`. It includes declarative architecture search using `ray tune` and experiment management using `sacred`.
 
-- install
-  - `pip install tensorflow numpy pandas tqdm joblib bpemb ray sacred`
-  - experiment management also requires `mongodb` and `omniboard`.
+### install
 
-- operation
-  - set tune.run parameter
-      - config.py: config dict definieren
-        - vgl. https://docs.ray.io/en/latest/tune/api_docs/search_space.html#random-distributions-api
-      - run.py: num_samples, EXPERIMENT_NAME, bpemb (select built-in or custom bpe embeddings)
-  - start experiment
-      - `export CUDA_VISIBLE_DEVICES="0,1"`
-      - `export TUNE_DISABLE_STRICT_METRIC_CHECKING="1"`
-      - `python3 run_de.py`
-  - connect omniboard
-      - to local: `omniboard`
-      - to workstation: `omniboard -m 192.168.0.8:27017:sacred`
-  - manage experiments
-      - ggfs. "metric columns" hinzufügen, um experimente nach anderen scores zu sortieren
-      - beste modelle taggen
-  - backup the best experiments
-      - `../datalake/sacred-sync.py`
-        - find and copy all sacred experiments matching a key=value (e.g. tag)
-        - use case: workstation mongodb -> local (=backup) mongodb
+- `pip install tensorflow numpy pandas tqdm joblib bpemb ray sacred`
+- Experiment management also requires `mongodb` and `omniboard`.
+
+### operations
+
+- Set tune.run parameter
+    - config.py: config dict definieren
+      - vgl. https://docs.ray.io/en/latest/tune/api_docs/search_space.html#random-distributions-api
+    - run.py: num_samples, EXPERIMENT_NAME, bpemb (select built-in or custom bpe embeddings)
+
+- Start experiment
+    - `export CUDA_VISIBLE_DEVICES="0,1"`
+    - `export TUNE_DISABLE_STRICT_METRIC_CHECKING="1"`
+    - `python3 run_de.py`
+
+- Connect omniboard
+    - to local: `omniboard`
+    - to remote host: `omniboard -m 192.168.0.8:27017:sacred`
+
+- Manage experiments
+    - add metric columns and sort by scores
+    - tag candidate models
+
+- Backup candidates
+    - using `datalake/sacred-sync.py`: find and copy all sacred experiments matching a key=value (e.g. tag) to another (i.e. local) MongoDB instance.
 
 ## good to know
 
