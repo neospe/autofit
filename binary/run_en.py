@@ -22,10 +22,6 @@ from time import sleep
 from joblib import dump, load
 import json
 
-# dataload
-from dataload.loader import *
-from dataload.preproc import *
-
 # tokenization
 from bpemb import BPEmb
 import emoji
@@ -46,8 +42,6 @@ from ray.tune.suggest import ConcurrencyLimiter
 from config_en import *
 
 # system
-os.system('$env:CUDA_VISIBLE_DEVICES="0,1"')
-os.system('$env:TUNE_DISABLE_STRICT_METRIC_CHECKING="1"')
 DB_ADDR = '127.0.0.1:27017'
 DB_NAME = 'datalake'
 LOG_WORKERS = False
@@ -70,45 +64,19 @@ validation_split = 0.2  #0.2
 BPE_MODEL = '../bpemb/en-50k-300d.model'
 BPE_EMBEDDING = '../bpemb/en-50k-300d-vectors.txt'
 
-DATA_1 = 'hate-speech-and-offensive-language/data/labeled_data.csv'  # 24783 items
+DATA_ALL = 'data/train.tsv'
+DATA_TEST = 'data/test.tsv'
 
-DATA_2_ANN = 'hatespeech/NAACL_SRW_2016.csv'
-DATA_2_TXT = 'AutomaticDetectionofHateSpeech/hatespeech.csv'  # 16035 items
 
-DATA_3_ANN = 'hate-speech-dataset/annotations_metadata.csv'
-DATA_3_TXT = 'hate-speech-dataset/all_files'  # 10944 items
-
-DATA_4_TXT = 'OffensEval-2019/offenseval-training-v1.tsv'  # 13240 items
-DATA_4_CORR = 're-labelings/OffensEval-2019-profanity-predicted-edit.csv'
-
-DATA_5_TXT = 'founta-corpus/hatespeechtwitter-tweets.csv'  # 80.000 items
-DATA_5_ANN = 'founta-corpus/hatespeechtwitter.tsv'
-DATA_5_CORR = 're-labelings/founta-corpus-profanity-predicted-edit.csv'
-
-#DATA_6_TXT = 'delft/textClassification/toxic/train.csv'  # 159.571 items
-#DATA_6_1_TXT = 'delft/textClassification/toxic/test.csv'
-#DATA_6_1_ANN = 'delft/textClassification/toxic/test_labels.csv'  # 153.163 items
-
-DATA_7 = 'HateXplain/Data/dataset.json'
-
-DATA_8_1_TXT = 'SOLID/semeval_test/test_a_tweets.tsv'
-DATA_8_1_ANN = 'SOLID/semeval_test/test_a_labels.csv'
-DATA_8_2_TXT = 'SOLID/extended_test/test_a_tweets_all.tsv'
-DATA_8_2_ANN = 'SOLID/extended_test/test_a_labels_all.csv'
-DATA_8_CORR = 're-labelings/SOLID-testdata-profanity-predicted-edit.csv'
-
-DATA_9_TXT = 'OLIDv1.0/testset-levela.tsv'
-DATA_9_ANN = 'OLIDv1.0/labels-levela.csv'
-
-DATA_10 = 'MalignantCommentClassification/train.csv'
-
-DEBIAS_MADLIBS = 'social-bias/selection/bias_madlibs_89k.csv'
-DATA_THREAT = 'hexis-english-threats/hexis-english-threats.txt'
-
-AUG_BACKLOG_PATH = ['backlog.json']
-AUGS_TO_USE = [DATA_1, DATA_2_ANN, DATA_3_ANN, DATA_4_TXT, DATA_5_TXT, DATA_7, DATA_8_1_TXT]
-
-# ANM: extra testdaten müssen in einem eigenen directory liegen, sonst wird es mit den augmentations zusammen geladen (geht nach dataset/directory name, e.g. 'GermEval-2019-Data') -> evtl. TODO: beim laden der augmentations nochmal mit pfad der testdaten abgleichen u. diese excluden
+def simple_tsv_reader(path):
+    f = open(path,'r', encoding='utf-8')
+    data = []
+    for line in f:
+        entry = {}
+        cols = line.split('\t')
+        entry['text'] = cols[0]
+        entry['label'] = cols[1].rstrip()
+        data.append(entry)
 
 
 def create_embeddings(embedding, documents):
@@ -116,8 +84,8 @@ def create_embeddings(embedding, documents):
     labels = []
 
     for document in tqdm(documents):
-        text = clean_str(document['text'])
-        label = MAPPING_AGGRESSION_BINARY[document['label']]
+        text = document['text']
+        label = document['label']
 
         array_of_vecs = embedding.embed(text)        
         list_of_vecs = np.split(array_of_vecs, array_of_vecs.shape[0], axis=0)
@@ -155,32 +123,21 @@ def preprocessing():
     
     # Load data
     print('* Loading data')
-    data = []
-    data += hate1(files=[DATA_1])
-    data += hate2(files=[DATA_2_TXT, DATA_2_ANN])
-    data += hate3(files=[DATA_3_ANN, DATA_3_TXT])
-    data += hate4(files=[DATA_5_TXT, DATA_5_ANN, DATA_5_CORR])
-    data += offense19(files=[DATA_4_TXT, DATA_4_CORR])
-    data += offense20(files=[DATA_8_1_TXT, DATA_8_1_ANN, DATA_8_2_TXT, DATA_8_2_ANN, DATA_8_CORR])
-    data += hatexplain(files=[DATA_7])
-    data += malignant(files=[DATA_10])
-    data += debias_madlibs(files=[DEBIAS_MADLIBS])
-    data += germeval(files=[DATA_THREAT])
-    data += augmentations(files=AUG_BACKLOG_PATH+AUGS_TO_USE)
+    data = simple_tsv_reader(DATA_ALL)
     data = np.asarray(data)
     random.shuffle(data)
     print('data.shape:', data.shape)
     data_len = data.shape[0]
 
     # extra test data
-    data_test = olid(files=[DATA_9_TXT, DATA_9_ANN])
+    data_test = simple_tsv_reader(DATA_TEST)
     data_test = np.asarray(data_test)
     random.shuffle(data_test)
     print('data_test.shape:', data_test.shape)
     data_test_len = data_test.shape[0]
 
     # check class distribution over all corpora
-    c = Counter([MAPPING_AGGRESSION_BINARY[item['label']] for item in data])
+    c = Counter([item['label'] for item in data])
     print('class distribution:', c)
 
 
@@ -252,7 +209,6 @@ if __name__ == '__main__':
     for path in ['logs', 'saved_models']:
         if not os.path.exists(path):
             os.system('mkdir '+path)
-    #os.system('rm -r logs/*')
 
 
     # PREPROCESSING

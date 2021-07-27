@@ -26,9 +26,6 @@ from tqdm import tqdm
 from joblib import dump, load
 import json
 
-from dataload.loader import *
-from dataload.preproc import *
-
 # fixed seed
 #from numpy.random import seed
 #seed(1)
@@ -45,6 +42,17 @@ seq_len = 120  # sequence length
 
 BPE_MODEL = '../../bpemb/'+LANGUAGE+'-50k-300d.model'
 BPE_EMBEDDING = '../../bpemb/'+LANGUAGE+'-50k-300d-vectors.txt'
+
+
+def simple_tsv_reader(path):
+    f = open(path,'r', encoding='utf-8')
+    data = []
+    for line in f:
+        entry = {}
+        cols = line.split('\t')
+        entry['text'] = cols[0]
+        entry['label'] = cols[1].rstrip()
+        data.append(entry)
 
 
 def create_embeddings(embedding, text):      
@@ -229,7 +237,6 @@ if __name__ == '__main__':
             print('enter text:')
             text = input()
             if text != '':
-                text = clean_str(text)
                 x = create_embeddings(embedding, text)
                 x = pad_x_matrix(x, max_tokens=seq_len)
                 score = model.predict(x)
@@ -243,10 +250,10 @@ if __name__ == '__main__':
         else:
             print('unknown language code')
 
-        data = germeval(files=[DATA_PATH], local=True)
+        data = simple_tsv_reader(DATA_PATH)
         for post in data:
-            label = MAPPING_AGGRESSION_BINARY[post['label']]
-            text = clean_str(post['text'])
+            label = post['label']
+            text = post['text']
             x = create_embeddings(embedding, text)
             x = pad_x_matrix(x, max_tokens=seq_len)
             #print(x.shape)

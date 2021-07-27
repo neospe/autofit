@@ -29,9 +29,6 @@ import json
 
 import matplotlib.pyplot as plt
 
-from dataload.loader import *
-from dataload.preproc import *
-
 # fixed seed
 #from numpy.random import seed
 #seed(1)
@@ -82,8 +79,8 @@ def create_embeddings(embedding, documents):
     labels = []
 
     for document in tqdm(documents):
-        text = clean_str(document['text'])
-        label = MAPPING_AGGRESSION_BINARY[document['label']]
+        text = document['text']
+        label = document['label']
 
         array_of_vecs = embedding.embed(text)        
         list_of_vecs = np.split(array_of_vecs, array_of_vecs.shape[0], axis=0)

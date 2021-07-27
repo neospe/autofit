@@ -22,10 +22,6 @@ from time import sleep
 from joblib import dump, load
 import json
 
-# dataload
-from dataload.loader import *
-from dataload.preproc import *
-
 # tokenization
 from bpemb import BPEmb
 import emoji
@@ -46,8 +42,6 @@ from ray.tune.suggest import ConcurrencyLimiter
 from config_de import *
 
 # system
-os.system('$env:CUDA_VISIBLE_DEVICES="0,1"')
-os.system('$env:TUNE_DISABLE_STRICT_METRIC_CHECKING="1"')
 DB_ADDR = '127.0.0.1:27017'
 DB_NAME = 'datalake'
 LOG_WORKERS = False
@@ -69,27 +63,20 @@ validation_split = 0.2
 
 BPE_MODEL = '../bpemb/de-50k-300d.model'
 BPE_EMBEDDING = '../bpemb/de-50k-300d-vectors.txt'
-    
-DATA2018_TRAIN = 'GermEval-2018-Data/germeval2018.training.txt'
-DATA2018_TEST = 'GermEval-2018-Data/germeval2018.test.txt'  # 3532 items
-DATA2018_EXTRA = 'germeval2018-upinf/labeled_tweets.tsv'  # 3728 items
 
-DATA2019_TRAIN_1 = 'GermEval-2019-Data/germeval2019_training_subtask12.txt'
-DATA2019_TRAIN_2 = 'GermEval-2019-Data/germeval2019.training_subtask3.txt'
-DATA2019_TEST_1 = 'GermEval-2019-Data/germeval2019GoldLabelsSubtask12.txt'  # 3031 items
-DATA2019_TEST_2 = 'GermEval-2019-Data/germeval2019GoldLabelsSubtask3.txt'
+DATA_ALL = 'data/train.tsv'
+DATA_TEST = 'data/test.tsv'
 
-DEBIAS_MADLIBS = 'social-bias/selection/bias_madlibs_89k-German.csv'
 
-# data gesamt
-DATA_ALL = [DATA2018_TRAIN, DATA2018_TEST, DATA2019_TRAIN_1, DATA2019_TEST_1, DATA2019_TRAIN_2, DATA2019_TEST_2]
-
-# ANM: extra testdaten müssen in einem eigenen directory liegen, sonst wird es implizit bei den augmentations mit geladen (geht nach dataset/directory name, e.g. 'GermEval-2019-Data') -> evtl. TODO: beim laden der augmentations nochmal mit DATA_TEST abgleichen
-DATA_TEST = [DATA2018_EXTRA]
-
-# augmentations
-AUG_BACKLOG_PATH = ['backlog.json']
-AUGS_TO_USE = [DATA2018_TRAIN, DATA2019_TRAIN_1]
+def simple_tsv_reader(path):
+    f = open(path,'r', encoding='utf-8')
+    data = []
+    for line in f:
+        entry = {}
+        cols = line.split('\t')
+        entry['text'] = cols[0]
+        entry['label'] = cols[1].rstrip()
+        data.append(entry)
 
 
 def create_embeddings(embedding, documents):
@@ -97,8 +84,8 @@ def create_embeddings(embedding, documents):
     labels = []
 
     for document in tqdm(documents): 
-        text = clean_str(document['text'])
-        label = MAPPING_AGGRESSION_BINARY[document['label']]
+        text = document['text']
+        label = document['label']
 
         array_of_vecs = embedding.embed(text)        
         list_of_vecs = np.split(array_of_vecs, array_of_vecs.shape[0], axis=0)
@@ -136,9 +123,7 @@ def preprocessing():
 
     # Load data
     print('* Loading data')
-    data = germeval(files=DATA_ALL)
-    data += debias_madlibs(files=[DEBIAS_MADLIBS])
-    data += augmentations(files=AUG_BACKLOG_PATH+AUGS_TO_USE)
+    data = simple_tsv_reader(DATA_ALL)
     data = np.asarray(data)
     random.shuffle(data)
     print('data.shape:', data.shape)
@@ -150,14 +135,14 @@ def preprocessing():
     #print(data_sample)
 
     # extra test data
-    data_test = germeval(files=DATA_TEST)
+    data_test = simple_tsv_reader(DATA_TEST)
     data_test = np.asarray(data_test)
     random.shuffle(data_test)
     print('data_test.shape:', data_test.shape)
     data_test_len = data_test.shape[0]
     
     # check class distribution over all corpora
-    c = Counter([MAPPING_AGGRESSION_BINARY[item['label']] for item in data])
+    c = Counter([item['label'] for item in data])
     print('class distribution:', c)
 
 
@@ -235,7 +220,6 @@ if __name__ == '__main__':
     for path in ['logs', 'saved_models']:
         if not os.path.exists(path):
             os.system('mkdir '+path)
-    #os.system('rm -r logs/*')
 
 
     # PREPROCESSING
